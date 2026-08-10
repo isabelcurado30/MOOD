@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mood - Agency & Creative</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header class="site-header" id="siteHeader">
+            <div class="brand">
+                <a href="#"><img src="img/logo.png" alt="Mood" onerror="this.remove()"></a>
+            </div>
+
+            <nav class="nav" id="siteNav" data-open="false">
+                <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navOverlay">
+                    <span class="label">Menú</span>
+                    <span class="bars"><span></span><span></span><span></span></span>
+                </button>
+
+            </nav>
+        </header>
+
+        <section class="hero">
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="video/hero.mp4" type="video/mp4">
+                <source src="video/hero.webm" type="video/webm">
+            </video>
+            <div class="mood-field" aria-hidden="true">
+                <span></span><span></span><span></span>
+            </div>
+            <div class="hero-content">
+                <span class="hero-eyebrow reveal">Mood — Agency &amp; Creative</span>
+                <h1 class="hero-phrase reveal reveal--delay">Donde la creatividad y el talento encuentran su identidad.</h1>
+            </div>
+        </section>
+
+        <section class="grupo-section reveal">
+            <h2 class="grupo-title">GRUPO MOOD <span>©</span></h2>
+            <div class="grupo-cards">
+
+                <a href="#agency" class="grupo-card grupo-card--agency">
+                    <img src="img/moodagency.png" alt="Mood Agency" class="grupo-card-bg-img" onerror="this.remove()">
+                    <span class="grupo-card-btn">VER MÁS</span>
+                </a>
+
+                <a href="#creative" class="grupo-card grupo-card--creative">
+                    <img src="img/moodcreative1.png" alt="Mood Creative" class="grupo-card-bg-img" onerror="this.remove()">
+                    <span class="grupo-card-btn">VER MÁS</span>
+                </a>
+
+                <a href="#eventos" class="grupo-card grupo-card--events">
+                    <img src="img/moodexperience.png" alt="Mood Experience" class="grupo-card-bg-img" onerror="this.remove()">
+                    <span class="grupo-card-btn">VER MÁS</span>
+                </a>
+
+            </div>
+
+            <div class="grupo-tagline">
+                <h3>¿EN QUÉ MOOD ESTÁS?</h3>
+                <p>Sea cual sea tu objetivo, en Mood tenemos una forma de hacerlo realidad. Explora nuestras divisiones y descubre todo lo que podemos crear juntos.</p>
+            </div>
+        </section>
+
+        <!-- ===== DJS + COLABORADORES ===== -->
+        <div class="djs-wrapper">
+        <section class="djs-section" id="agency">
+            <div class="djs-header reveal">
+                <span class="section-eyebrow">Mood Agency</span>
+                <h2 class="section-title">Nuestros artistas</h2>
+            </div>
+
+            <div class="djs-roster">
+
+                <article class="dj-spot reveal" data-dj="0">
+                    <div class="dj-spot-glow"></div>
+                    <div class="dj-spot-circle">
+                        <img src="img/1.png" alt="DJ Nombre" onerror="this.style.display='none'">
+                    </div>
+                    <div class="dj-spot-foot">
+                        <span class="dj-genre">FATI CORONA</span>
+                        <button class="dj-spot-btn">Ver perfil ✦</button>
+                    </div>
+                </article>
+
+                <article class="dj-spot reveal reveal--delay" data-dj="1">
+                    <div class="dj-spot-glow"></div>
+                    <div class="dj-spot-circle">
+                        <img src="img/2.png" alt="DJ MORALES" onerror="this.style.display='none'">
+                    </div>
+                    <div class="dj-spot-foot">
+                        <span class="dj-genre">DJ MORALES</span>
+                        <button class="dj-spot-btn">Ver Perfil</button>
+                    </div>
+                </article>
+
+                <article class="dj-spot reveal reveal--delay-3" data-dj="2">
+                    <div class="dj-spot-glow"></div>
+                    <div class="dj-spot-circle">
+                        <img src="img/3.png" alt="DJ Nombre" onerror="this.style.display='none'">
+                    </div>
+                    <div class="dj-spot-foot">
+                        <span class="dj-genre">MALBIE + RICHIE</span>
+                        <button class="dj-spot-btn">Ver perfil ✦</button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ===== COLABORADORES ===== -->
+        <section class="djs-section djs-section--colabs">
+            <div class="djs-header reveal">
+                <span class="section-eyebrow">Mood Agency</span>
+                <h2 class="section-title">DJs que colaboran con nosotros</h2>
+            </div>
+
+            <div class="djs-roster">
+
+                <article class="dj-spot reveal" data-dj="3">
+                    <div class="dj-spot-glow"></div>
+                    <div class="dj-spot-circle">
+                        <img src="img/4.png" alt="ALBERT MOON" onerror="this.style.display='none'">
+                    </div>
+                    <div class="dj-spot-foot">
+                        <span class="dj-genre">ALBERT MOON</span>
+                        <button class="dj-spot-btn">Ver perfil ✦</button>
+                    </div>
+                </article>
+
+                <article class="dj-spot reveal reveal--delay" data-dj="4">
+                    <div class="dj-spot-glow"></div>
+                    <div class="dj-spot-circle">
+                        <img src="img/5.png" alt="DJ Nombre" onerror="this.style.display='none'">
+                    </div>
+                    <div class="dj-spot-foot">
+                        <span class="dj-genre">ISMA RODRI</span>
+                        <button class="dj-spot-btn">Ver perfil ✦</button>
+                    </div>
+                </article>
+
+                <article class="dj-spot reveal reveal--delay-3" data-dj="5">
+                    <div class="dj-spot-glow"></div>
+                    <div class="dj-spot-circle">
+                        <img src="img/6.png" alt="DJ Nombre" onerror="this.style.display='none'">
+                    </div>
+                    <div class="dj-spot-foot">
+                        <span class="dj-genre">JORGE BARRERA</span>
+                        <button class="dj-spot-btn">Ver perfil ✦</button>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        </div><!-- fin .djs-wrapper -->
+
+        <!-- ===== MOOD CREATIVE ===== -->
+        <section class="creative-section" id="creative">
+
+            <div class="creative-header reveal">
+                <h2 class="creative-heading">Servicios de <img src="img/moodcreative1.png" alt="Mood Creative" class="creative-heading-logo"></h2>
+            </div>
+
+            <div class="creative-marquee-wrap" aria-hidden="true">
+                <div class="creative-marquee-track">
+                    <span>Redes sociales</span><span class="creative-dot">·</span>
+                    <span>Desarrollo y SEO web</span><span class="creative-dot">·</span>
+                    <span>Diseño gráfico</span><span class="creative-dot">·</span>
+                    <span>Fotografía</span><span class="creative-dot">·</span>
+                    <span>Videografía</span><span class="creative-dot">·</span>
+                    <span>Redes sociales</span><span class="creative-dot">·</span>
+                    <span>Desarrollo y SEO web</span><span class="creative-dot">·</span>
+                    <span>Diseño gráfico</span><span class="creative-dot">·</span>
+                    <span>Fotografía</span><span class="creative-dot">·</span>
+                    <span>Videografía</span><span class="creative-dot">·</span>
+                </div>
+            </div>
+
+            <!-- Servicios detalle -->
+            <div class="creative-services">
+
+                <!-- REDES SOCIALES -->
+                <article class="creative-service reveal">
+                    <div class="creative-service-text">
+                        <h3 class="creative-service-title">Redes sociales</h3>
+                        <p class="creative-service-desc"><em>Planificamos, creamos y gestionamos el contenido de tus redes sociales para que tu marca comunique de forma constante, profesional y alineada con sus objetivos.</em></p>
+                        <ul class="creative-stats">
+                            <li><span class="creative-stat-label">Visualizaciones</span><span class="creative-stat-value creative-stat-value--up">↗ 819,8 mil</span></li>
+                            <li><span class="creative-stat-label">Interacciones</span><span class="creative-stat-value creative-stat-value--up">↗ 9.470</span></li>
+                            <li><span class="creative-stat-label">Nuevos seguidores</span><span class="creative-stat-value creative-stat-value--up">↗ 201</span></li>
+                            <li><span class="creative-stat-label">Contenido publicado</span><span class="creative-stat-value">106</span></li>
+                        </ul>
+                    </div>
+                    <div class="creative-service-visual">
+                        <div class="creative-phone-wrap">
+                            <div class="cpw-circle"></div>
+                            <img class="cpw-phone" src="img/isometric-style-photo-of-black-smartphone-similar-to-iphone-without-background-template-for-mockup-png.webp" alt="iPhone">
+                            <span class="cpi cpi--tiktok cpw-icon cpw-icon--1">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.76a4.85 4.85 0 0 1-1.01-.07z"/></svg>
+                            </span>
+                            <span class="cpi cpi--youtube cpw-icon cpw-icon--2">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.54 3.5 12 3.5 12 3.5s-7.54 0-9.38.55A3.02 3.02 0 0 0 .5 6.19C0 8.04 0 12 0 12s0 3.96.5 5.81a3.02 3.02 0 0 0 2.12 2.14C4.46 20.5 12 20.5 12 20.5s7.54 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14C24 15.96 24 12 24 12s0-3.96-.5-5.81zM9.75 15.5V8.5l6.5 3.5-6.5 3.5z"/></svg>
+                            </span>
+                            <span class="cpi cpi--facebook cpw-icon cpw-icon--3">
+                                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.791-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.97h-1.514c-1.491 0-1.956.93-1.956 1.886v2.269h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+                            </span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- DISEÑO WEB -->
+                <article class="creative-service creative-service--web reveal">
+                    <div class="creative-service-text">
+                        <h3 class="creative-service-title csw-title">Desarrollo y SEO web</h3>
+                        <p class="creative-service-desc"><em>Desarrollamos páginas web optimizadas, mejoramos tu posicionamiento SEO y gestionamos tu Perfil de Empresa en Google para aumentar tu visibilidad.</em></p>
+                    </div>
+                    <div class="csw-screenshots">
+                        <img class="csw-img csw-img--1" src="img/sincronia.png" alt="Sincronia">
+                        <img class="csw-img csw-img--2" src="img/cdutrera.png" alt="CD Utrera">
+                        <img class="csw-img csw-img--3" src="img/sincronia2.png" alt="Sincronia 2">
+                    </div>
+                    <div class="csw-cta">
+                        <a href="#paginas-web" class="csw-cta-btn">Quiero poner mi web en vuestras manos</a>
+                        <span class="csw-cta-sub">(Obtén información y precios)</span>
+                    </div>
+                </article>
+
+                <!-- DISEÑO GRÁFICO -->
+                <article class="creative-service csg-section reveal">
+                    <div class="csg-top">
+                        <h3 class="creative-service-title csg-title">Diseño gráfico</h3>
+                        <div class="csg-intro">
+                            <p class="csg-desc"><em>Diseñamos la identidad visual de tu marca y desarrollamos todo el material gráfico necesario para que comunique con coherencia en cualquier soporte.</em></p>
+                        </div>
+                    </div>
+                    <div class="csg-carousels-wrap">
+                        <div class="csg-carousel" data-carousel="0">
+                            <div class="csg-carousel-track">
+                                <div class="csg-carousel-slide active"><img src="img/diseno1.png" alt="Diseño gráfico 1"></div>
+                                <div class="csg-carousel-slide"><img src="img/diseno2.png" alt="Diseño gráfico 2"></div>
+                            </div>
+                            <div class="csg-carousel-dots">
+                                <span class="csg-dot active"></span>
+                                <span class="csg-dot"></span>
+                            </div>
+                        </div>
+                        <div class="csg-carousel" data-carousel="1">
+                            <div class="csg-carousel-track">
+                                <div class="csg-carousel-slide active"><img src="img/diseno3.png" alt="Diseño gráfico 3"></div>
+                                <div class="csg-carousel-slide"><img src="img/diseno4.png" alt="Diseño gráfico 4"></div>
+                            </div>
+                            <div class="csg-carousel-dots">
+                                <span class="csg-dot active"></span>
+                                <span class="csg-dot"></span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- FOTOGRAFÍA Y VIDEO -->
+                <article class="creative-service cfv-section reveal">
+                    <div class="cfv-left">
+                        <h3 class="creative-service-title cfv-title">Fotografía y video</h3>
+                        <p class="cfv-desc"><em>Creamos contenido fotográfico y audiovisual para empresas, marcas y proyectos que buscan comunicar con una imagen profesional. Seguimos presentes en el deporte, donde nació nuestra trayectoria con Fotos MT.</em></p>
+                    </div>
+                    <div class="cfv-gallery">
+                        <img class="cfv-img cfv-img--1" src="img/foto1.jpg" alt="" onerror="this.style.display='none'">
+                        <img class="cfv-img cfv-img--2" src="img/foto2.jpg" alt="" onerror="this.style.display='none'">
+                        <img class="cfv-img cfv-img--3" src="img/foto3.jpg" alt="" onerror="this.style.display='none'">
+                        <img class="cfv-img cfv-img--4" src="img/foto4.jpg" alt="" onerror="this.style.display='none'">
+                    </div>
+                </article>
+
+                <!-- PÁGINAS WEB HERO -->
+                <article class="creative-service cpw-section reveal" id="paginas-web">
+                    <img class="cpw-logo" src="img/moodcreative1.png" alt="Mood Creative">
+                    <div class="cpw-heading">
+                        <span class="cpw-pre">Desarrollo de</span>
+                        <h3 class="cpw-h3">PÁGINAS WEB</h3>
+                    </div>
+                    <img class="cpw-icon-bottom" src="img/exp.png" alt="Mood Experience">
+                </article>
+
+                <!-- PRECIOS WEB -->
+                <article class="creative-service cpr-section reveal">
+                    <img class="cpr-logo" src="img/expblanco.png" alt="Mood Experience">
+                    <div class="cpr-cards">
+                        <div class="cpr-card cpr-card--basic">
+                            <h4 class="cpr-card-title">PAQUETE<br>BÁSICO</h4>
+                            <ul class="cpr-list">
+                                <li>✓ Página web para mostrar tu negocio, servicios o productos.</li>
+                                <li>✓ Diseño profesional y limpio.</li>
+                                <li>✓ Entrega rápida</li>
+                                <li class="cpr-no">✗ No incluye seguridad</li>
+                            </ul>
+                            <div class="cpr-price">95€</div>
+                        </div>
+                        <div class="cpr-card cpr-card--pro">
+                            <span class="cpr-badge">Opción más elegida</span>
+                            <h4 class="cpr-card-title">PAQUETE<br>PRO</h4>
+                            <ul class="cpr-list">
+                                <li>✓ Web adaptada a la imagen de tu marca.</li>
+                                <li>✓ Diseño profesional, moderno y orientado a vender.</li>
+                                <li>✓ Catálogo o productos del negocio integrados.</li>
+                                <li>✓ Actualización de textos e imágenes incluidas (cambios básicos).</li>
+                                <li>✓ 3 meses de mantenimiento GRATIS</li>
+                            </ul>
+                            <div class="cpr-price">179€</div>
+                        </div>
+                        <div class="cpr-card cpr-card--premium">
+                            <h4 class="cpr-card-title">PAQUETE<br>PREMIUM</h4>
+                            <ul class="cpr-list">
+                                <li>✓ Todo lo incluido en Pro.</li>
+                                <li>✓ Diseño completamente adaptado a la identidad del negocio.</li>
+                                <li>✓ Cambios y modificaciones avanzadas.</li>
+                                <li>✓ Prioridad en soporte y actualizaciones.</li>
+                                <li>✓ 3 meses de mantenimiento GRATIS.</li>
+                                <li>✓ Copia de seguridad mensual</li>
+                            </ul>
+                            <div class="cpr-price">318€</div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- OPCIONES DE MANTENIMIENTO -->
+                <article class="creative-service com-section reveal">
+                    <h3 class="com-title">OPCIONES DE<br>MANTENIMIENTO</h3>
+                </article>
+
+                <!-- PLANES DE MANTENIMIENTO -->
+                <article class="creative-service cmt-section reveal">
+                    <div class="cmt-row cmt-row--essential">
+                        <div class="cmt-left">
+                            <span class="cmt-name">ESSENTIAL</span>
+                            <strong class="cmt-months">3 meses</strong>
+                            <span class="cmt-sub">de mantenimiento</span>
+                        </div>
+                        <div class="cmt-mid">Control de calidad mensual, solución de cualquier fallo.</div>
+                        <div class="cmt-right"><span class="cmt-price">80€</span></div>
+                    </div>
+                    <div class="cmt-row cmt-row--bussines">
+                        <div class="cmt-left">
+                            <span class="cmt-name">BUSSINES</span>
+                            <strong class="cmt-months">6 meses</strong>
+                            <span class="cmt-sub">de mantenimiento</span>
+                        </div>
+                        <div class="cmt-mid">Control de calidad mensual, solución de cualquier fallo, soporte por mensaje.</div>
+                        <div class="cmt-right"><span class="cmt-price">140€</span></div>
+                    </div>
+                    <div class="cmt-row cmt-row--plus">
+                        <div class="cmt-left">
+                            <span class="cmt-name">PLUS</span>
+                            <strong class="cmt-months">12 meses</strong>
+                            <span class="cmt-sub">de mantenimiento</span>
+                        </div>
+                        <div class="cmt-mid">Todo lo incluído en Bussines, soporte 24/7 por teléfono, copias de seguridad mensuales.</div>
+                        <div class="cmt-right">
+                            <span class="cmt-price">200€</span>
+                            <span class="cmt-save">Ahorras 120€</span>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- ===== MOOD EXPERIENCE ===== -->
+        <section class="experience-section" id="eventos">
+
+                <!-- Cohete izquierda -->
+                <div class="exp-rocket exp-rocket--left" aria-hidden="true">
+                    <svg viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 5 C28 20 20 45 20 70 L40 80 L60 70 C60 45 52 20 40 5Z" fill="white"/>
+                        <ellipse cx="40" cy="70" rx="10" ry="6" fill="#ccc"/>
+                        <path d="M20 70 L8 90 L20 85Z" fill="white"/>
+                        <path d="M60 70 L72 90 L60 85Z" fill="white"/>
+                        <path d="M30 78 Q40 115 50 78" fill="#F6B249"/>
+                        <path d="M33 80 Q40 108 47 80" fill="#FF6B00"/>
+                        <circle cx="40" cy="38" r="9" fill="#5bcfcf" opacity=".9"/>
+                    </svg>
+                </div>
+
+                <!-- Cohete derecha -->
+                <div class="exp-rocket exp-rocket--right" aria-hidden="true">
+                    <svg viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M40 5 C28 20 20 45 20 70 L40 80 L60 70 C60 45 52 20 40 5Z" fill="white"/>
+                        <ellipse cx="40" cy="70" rx="10" ry="6" fill="#ccc"/>
+                        <path d="M20 70 L8 90 L20 85Z" fill="white"/>
+                        <path d="M60 70 L72 90 L60 85Z" fill="white"/>
+                        <path d="M30 78 Q40 115 50 78" fill="#F6B249"/>
+                        <path d="M33 80 Q40 108 47 80" fill="#FF6B00"/>
+                        <circle cx="40" cy="38" r="9" fill="#5bcfcf" opacity=".9"/>
+                    </svg>
+                </div>
+
+            <!-- parte superior: espacio -->
+            <div class="exp-space">
+                <!-- estrellas generadas por JS -->
+                <div class="exp-stars" id="expStars"></div>
+
+                <h2 class="exp-title">
+                    <em>Mood</em> <span class="exp-title--teal">Experience</span>
+                </h2>
+
+                <div class="exp-center">
+                    <p class="exp-claim"><strong>CREAMOS LA EXPERIENCIA</strong><br>para que solo tengas que <strong>vivirla.</strong></p>
+                    <div class="exp-logo-text">
+                        <span class="exp-logo-exp">Experience</span>
+                        <span class="exp-logo-mood">Mood<span class="exp-logo-dot"></span></span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- parte inferior: teal -->
+            <div class="exp-teal">
+                <p class="exp-desc">Nos encargamos de organizar todo lo que te da pereza, solo preocúpate de llamar a los invitados.</p>
+                <div class="exp-glasses" aria-hidden="true">
+                    <svg viewBox="0 0 300 255" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+
+                        <!-- Cada copa: origen en la base, copa sube en Y negativo -->
+                        <!-- Copa izquierda: base en (75,205), inclinada +18deg -->
+                        <g transform="translate(75,205) rotate(18)">
+                            <path d="M-11,-178 C-13,-155 -13,-125 -7,-98 L7,-98 C13,-125 13,-155 11,-178 Z"/>
+                            <line x1="0" y1="-98" x2="0" y2="-42"/>
+                            <ellipse cx="0" cy="-38" rx="14" ry="4"/>
+                            <circle cx="-3" cy="-155" r="2" fill="white" stroke="none" opacity=".85"/>
+                            <circle cx="3"  cy="-135" r="1.5" fill="white" stroke="none" opacity=".7"/>
+                            <circle cx="-1" cy="-170" r="1.5" fill="white" stroke="none" opacity=".6"/>
+                            <path d="M-11,-30 Q0,-22 11,-30" stroke="#C084FC" stroke-width="2" fill="none"/>
+                            <path d="M-14,0 C-18,18 -12,40 0,41 C12,42 18,18 14,0 Z" stroke-width="2"/>
+                        </g>
+
+                        <!-- Copa central: base en (150,205), recta -->
+                        <g transform="translate(150,205)">
+                            <path d="M-11,-178 C-13,-155 -13,-125 -7,-98 L7,-98 C13,-125 13,-155 11,-178 Z"/>
+                            <line x1="0" y1="-98" x2="0" y2="-42"/>
+                            <ellipse cx="0" cy="-38" rx="14" ry="4"/>
+                            <circle cx="-3" cy="-158" r="2" fill="white" stroke="none" opacity=".85"/>
+                            <circle cx="4"  cy="-138" r="1.5" fill="white" stroke="none" opacity=".7"/>
+                            <circle cx="-2" cy="-175" r="1.5" fill="white" stroke="none" opacity=".6"/>
+                            <path d="M-11,-30 Q0,-22 11,-30" stroke="#C084FC" stroke-width="2" fill="none"/>
+                            <path d="M-14,0 C-18,18 -12,40 0,41 C12,42 18,18 14,0 Z" stroke-width="2"/>
+                        </g>
+
+                        <!-- Copa derecha: base en (225,205), inclinada -18deg -->
+                        <g transform="translate(225,205) rotate(-18)">
+                            <path d="M-11,-178 C-13,-155 -13,-125 -7,-98 L7,-98 C13,-125 13,-155 11,-178 Z"/>
+                            <line x1="0" y1="-98" x2="0" y2="-42"/>
+                            <ellipse cx="0" cy="-38" rx="14" ry="4"/>
+                            <circle cx="-3" cy="-155" r="2" fill="white" stroke="none" opacity=".85"/>
+                            <circle cx="3"  cy="-135" r="1.5" fill="white" stroke="none" opacity=".7"/>
+                            <circle cx="-1" cy="-170" r="1.5" fill="white" stroke="none" opacity=".6"/>
+                            <path d="M-11,-30 Q0,-22 11,-30" stroke="#C084FC" stroke-width="2" fill="none"/>
+                            <path d="M-14,0 C-18,18 -12,40 0,41 C12,42 18,18 14,0 Z" stroke-width="2"/>
+                        </g>
+
+                    </svg>
+                </div>
+            </div>
+
+            <!-- marquee + CTA -->
+            <div class="exp-bottom">
+                <div class="exp-marquee-wrap" aria-hidden="true">
+                    <div class="exp-marquee-track">
+                        <span>· Decoración</span><span>· Seguridad</span><span>· Videografía</span><span>· Camareros</span><span>· Fotografía</span><span>· Decoración</span><span>· Seguridad</span><span>· Videografía</span><span>· Camareros</span><span>· Fotografía</span>
+                    </div>
+                </div>
+                <div class="exp-cta-wrap">
+                    <a href="https://wa.me/34644690926" class="exp-cta-btn" target="_blank" rel="noopener">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C8 2 4 6 4 10c0 6 8 12 8 12s8-6 8-12c0-4-4-8-8-8z"/><circle cx="12" cy="10" r="3"/></svg>
+                        Hablemos de tu evento
+                    </a>
+                </div>
+                <div class="exp-circle" aria-hidden="true"></div>
+            </div>
+
+        </section>
+
+        <!-- CTA final -->
+        <div class="creative-cta reveal">
+            <p class="creative-cta-text">¿Tu marca necesita presencia digital?</p>
+            <a href="https://wa.me/34644690926" class="creative-cta-btn" target="_blank" rel="noopener">Hablemos →</a>
+        </div>
+
+        <!-- ===== FOOTER ===== -->
+        <footer class="site-footer">
+            <!-- Pon la ruta de tu imagen de fondo aquí -->
+            <div class="footer-bg" style="background-image:url('img/footer-bg.png')"></div>
+            <div class="footer-overlay"></div>
+
+            <div class="footer-inner">
+
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <img src="img/logo.png" alt="Mood" class="footer-logo" onerror="this.remove()">
+                        <p class="footer-tagline">Donde la creatividad y el talento encuentran su identidad.</p>
+                    </div>
+
+                    <nav class="footer-nav">
+                        <span class="footer-nav-title">Explora</span>
+                        <a href="#agency">Mood Agency</a>
+                        <a href="#creative">Mood Creative</a>
+                        <a href="#eventos">Eventos</a>
+                    </nav>
+
+                    <div class="footer-contact">
+                        <span class="footer-nav-title">Contacto</span>
+                        <a href="mailto:contacto@moodagency.es" class="footer-email">contacto@moodagency.es</a>
+                        <div class="footer-socials">
+                            <a href="https://www.instagram.com/moodagency.es/" class="footer-social" aria-label="Instagram" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/>
+                                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                                </svg>
+                                Instagram · Mood Agency
+                            </a>
+                            <a href="https://www.instagram.com/moodcreative.es_/" class="footer-social" aria-label="Instagram Creative" target="_blank" rel="noopener">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/>
+                                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                                </svg>
+                                Instagram · Mood Creative
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <span>© 2026 Mood Agency & Creative. Todos los derechos reservados.</span>
+                </div>
+
+            </div>
+        </footer>
+
+        <!-- ===== WHATSAPP BTN ===== -->
+        <a href="https://wa.me/34644690926" class="wa-btn" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+            <span class="wa-dot"></span>
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.428a.75.75 0 0 0 .915.915l5.571-1.476A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.714 9.714 0 0 1-4.946-1.349l-.355-.21-3.679.974.982-3.595-.229-.368A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+            </svg>
+        </a>
+
+        <!-- ===== NAV OVERLAY ===== -->
+        <div class="nav-overlay" id="navOverlay">
+            <button class="nav-overlay-close" id="navOverlayClose" aria-label="Cerrar menú">✕</button>
+            <nav class="nav-overlay-links">
+                <a href="#" class="nav-overlay-link" data-close>INICIO</a>
+                <a href="#agency" class="nav-overlay-link" data-close>MOOD AGENCY</a>
+                <a href="#creative" class="nav-overlay-link" data-close>MOOD CREATIVE</a>
+                <a href="#eventos" class="nav-overlay-link" data-close>MOOD EXPERIENCE</a>
+            </nav>
+        </div>
+
+        <!-- ===== MODAL DJ ===== -->
+        <div class="dj-modal" id="djModal" role="dialog" aria-modal="true" aria-hidden="true">
+            <div class="dj-modal-backdrop"></div>
+            <div class="dj-modal-box">
+                <button class="dj-modal-close" id="djModalClose" aria-label="Cerrar">✕</button>
+                <div class="dj-modal-photo" id="djModalPhoto"></div>
+                <div class="dj-modal-content">
+                    <span class="dj-genre" id="djModalGenre"></span>
+                    <h2 class="dj-modal-name" id="djModalName"></h2>
+                    <p class="dj-modal-bio" id="djModalBio"></p>
+                    <div class="dj-modal-tags" id="djModalTags"></div>
+                    <div class="dj-modal-links" id="djModalLinks"></div>
+                    <a href="#" class="dj-modal-booking">Contactar para booking →</a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+        const header = document.getElementById('siteHeader');
+        const onScroll = () => {
+            header.classList.toggle('is-scrolled', window.scrollY > 40);
+        };
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive:true });
+
+        // Fullscreen overlay menu
+        const toggle = document.getElementById('navToggle');
+        const overlay = document.getElementById('navOverlay');
+        const overlayClose = document.getElementById('navOverlayClose');
+
+        function openMenu() {
+            overlay.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMenu() {
+            overlay.classList.remove('is-open');
+            document.body.style.overflow = '';
+        }
+
+        toggle.addEventListener('click', openMenu);
+        overlayClose.addEventListener('click', closeMenu);
+        document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeMenu(); });
+
+        // Cerrar al hacer clic en un enlace
+        overlay.querySelectorAll('[data-close]').forEach(function(link) {
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Estrellas animadas en Mood Experience
+        (function(){
+            var container = document.getElementById('expStars');
+            if(!container) return;
+            var count = 120;
+            var html = '';
+            for(var i=0;i<count;i++){
+                var x = Math.random()*100;
+                var y = Math.random()*100;
+                var size = Math.random()*2+0.5;
+                var dur = (Math.random()*3+2).toFixed(1);
+                var delay = (Math.random()*4).toFixed(1);
+                var op = (Math.random()*0.6+0.3).toFixed(2);
+                html += '<span style="position:absolute;left:'+x+'%;top:'+y+'%;width:'+size+'px;height:'+size+'px;border-radius:50%;background:#fff;opacity:'+op+';animation:star-twinkle '+dur+'s '+delay+'s ease-in-out infinite;"></span>';
+            }
+            container.innerHTML = html;
+        })();
+
+        // Carrusel automático diseño gráfico (doble)
+        document.querySelectorAll('.csg-carousel').forEach(function(carousel, idx){
+            var slides = carousel.querySelectorAll('.csg-carousel-slide');
+            var dots   = carousel.querySelectorAll('.csg-dot');
+            if(!slides.length) return;
+            var current = 0;
+            function goTo(n){
+                slides[current].classList.remove('active');
+                dots[current].classList.remove('active');
+                current = (n + slides.length) % slides.length;
+                slides[current].classList.add('active');
+                dots[current].classList.add('active');
+            }
+            dots.forEach(function(dot, i){ dot.addEventListener('click', function(){ goTo(i); }); });
+            // desfase entre los dos carruseles
+            setTimeout(function(){
+                setInterval(function(){ goTo(current + 1); }, 3000);
+            }, idx * 1500);
+        });
+
+        // Igualar altura sección diseño gráfico con las otras dos
+        window.addEventListener('load', function() {
+            var services = document.querySelectorAll('.creative-services > article');
+            if (services.length >= 3) {
+                var h1 = services[0].offsetHeight;
+                var h2 = services[1].offsetHeight;
+                var target = Math.round((h1 + h2) / 2);
+                services[2].style.minHeight = target + 'px';
+            }
+        });
+
+        // ---- Datos DJs (editar aquí) ----
+        const DJS = [
+            {
+                name: 'FATI CORONA',
+                genre: 'Tecno · Reggaeton · Flamenco',
+                bio: 'Empezamos con Fati Corona, DJ de la agencia con trayectoria en numerosos eventos privados y salas como Isla Copas (Dos Hermanas).',
+                tags: ['Residente', 'Club', 'Festival'],
+                photo: '', // ruta a la foto: 'img/djs/nombre.jpg'
+                gradient: 'linear-gradient(135deg,#5C139C,#2E2D2D)',
+                links: [{ label: 'Instagram', url: '#' }, { label: 'SoundCloud', url: '#' }]
+            },
+            {
+                name: 'DJ MORALES',
+                genre: 'Reggaeton · Dembow · Flamenco',
+                bio: 'DJ Morales, DJ utrerano, residente en discotecas como Donavants, Morgan y Vivo Terraza. También ha actuado en “Isla Copas” (Dos Hermanas), ha participado en numerosas ediciones en la Torre Pegi y en múltiples eventos privados, consolidándose como uno de los DJs emergentes con mayor proyección de la zona.',
+                tags: ['Industrial', 'Warehouse', 'Festival'],
+                photo: '',
+                gradient: 'linear-gradient(135deg,#F6B249,#C0392B)',
+                links: [{ label: 'Instagram', url: '#' }, { label: 'Beatport', url: '#' }]
+            },
+            {
+                name: 'MALBIE + RICHIE',
+                genre: 'Minimal',
+                bio: 'Breve biografía del artista. Aquí puedes contar su historia, de dónde viene, qué lo hace único y qué tipo de sets ofrece.',
+                tags: ['Club', 'After', 'DJ Set'],
+                photo: '',
+                gradient: 'linear-gradient(135deg,#1a1a2e,#5C139C)',
+                links: [{ label: 'Instagram', url: '#' }, { label: 'Mixcloud', url: '#' }]
+            },
+            {
+                name: 'ALBERT MOON',
+                genre: 'Afro House',
+                bio: 'Albert Moon, DJ con experiencia en numerosas discotecas como Moma, Bendita, Uthopía, Manhattan, Kaótica o Salvaje Room. En ferias como Lebrija, Morón o El Coronil y en chiringuitos como Picoco o Playa Madre.',
+                tags: ['Tribal', 'Festival', 'Live'],
+                photo: '',
+                gradient: 'linear-gradient(135deg,#F6B249,#5C139C)',
+                links: [{ label: 'Instagram', url: '#' }, { label: 'SoundCloud', url: '#' }]
+            },
+            {
+                name: 'ISMA RODRI',
+                genre: 'Deep House',
+                bio: 'Breve biografía del artista. Aquí puedes contar su historia, de dónde viene, qué lo hace único y qué tipo de sets ofrece.',
+                tags: ['Sunset', 'Club', 'B2B'],
+                photo: '',
+                gradient: 'linear-gradient(135deg,#0f3460,#F6B249)',
+                links: [{ label: 'Instagram', url: '#' }, { label: 'Spotify', url: '#' }]
+            },
+            // ---- Colaboradores (índices 3, 4, 5) ----
+            {
+                name: 'JORGE BARRENA',
+                genre: 'House',
+                bio: 'Jorge Barrena, DJ con experiencia en numerosas ferias, entre ellas la Feria de Sevilla, y en discotecas como Vizzio, Bestiario, Manhattan y Marimandona, donde actualmente es DJ residente.',
+                tags: ['Colaborador', 'Club'],
+                photo: '',
+                gradient: 'linear-gradient(135deg,#5C139C,#0f3460)',
+                links: [{ label: 'Instagram', url: '#' }]
+            },
+            {
+                name: 'DJ Nombre',
+                genre: 'Techno',
+                bio: 'Breve biografía del artista colaborador.',
+                tags: ['Colaborador', 'Festival'],
+                photo: '',
+                gradient: 'linear-gradient(135deg,#3d0a66,#2E2D2D)',
+                links: [{ label: 'Instagram', url: '#' }]
+            },
+            {
+                name: 'DJ Nombre',
+                genre: 'Tech House',
+                bio: 'Breve biografía del artista colaborador.',
+                tags: ['Colaborador', 'After'],
+                photo: '',
+                gradient: 'linear-gradient(135deg,#1a0030,#5C139C)',
+                links: [{ label: 'Instagram', url: '#' }]
+            }
+        ];
+
+        // ---- Modal ----
+        const modal = document.getElementById('djModal');
+        const modalClose = document.getElementById('djModalClose');
+        const backdrop = modal.querySelector('.dj-modal-backdrop');
+
+        function openModal(idx) {
+            const dj = DJS[idx];
+            document.getElementById('djModalName').textContent = dj.name;
+            document.getElementById('djModalGenre').textContent = dj.genre;
+            document.getElementById('djModalBio').textContent = dj.bio;
+
+            const photo = document.getElementById('djModalPhoto');
+            photo.style.background = dj.photo ? `url('${dj.photo}') center/cover no-repeat` : dj.gradient;
+
+            const tags = document.getElementById('djModalTags');
+            tags.innerHTML = dj.tags.map(t => `<span class="dj-tag">${t}</span>`).join('');
+
+            const links = document.getElementById('djModalLinks');
+            links.innerHTML = dj.links.map(l => `<a href="${l.url}" class="dj-link" target="_blank" rel="noopener">${l.label} ↗</a>`).join('');
+
+            modal.setAttribute('aria-hidden', 'false');
+            modal.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.setAttribute('aria-hidden', 'true');
+            modal.classList.remove('is-open');
+            document.body.style.overflow = '';
+        }
+
+        document.querySelectorAll('.dj-spot').forEach(spot => {
+            spot.addEventListener('click', () => openModal(+spot.dataset.dj));
+
+            // Nombre en marquee dentro del círculo
+            const idx = +spot.dataset.dj;
+            const dj  = DJS[idx];
+            if (dj) {
+                const wrap = document.createElement('div');
+                wrap.className = 'dj-circle-marquee';
+                wrap.setAttribute('aria-hidden', 'true');
+                const text = (dj.name.toUpperCase() + ' · ').repeat(5);
+                // Dos filas, cada una con dos copias para el loop sin corte
+                wrap.innerHTML = `
+                  <div class="dj-marquee-row">
+                    <span>${text}</span><span>${text}</span>
+                  </div>
+                  <div class="dj-marquee-row dj-marquee-row--offset">
+                    <span>${text}</span><span>${text}</span>
+                  </div>`;
+                spot.querySelector('.dj-spot-circle').prepend(wrap);
+            }
+        });
+        modalClose.addEventListener('click', closeModal);
+        backdrop.addEventListener('click', closeModal);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        // Scroll reveal
+        const revealEls = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(el => revealObserver.observe(el));
+        </script>
+    </body>
+</html>
