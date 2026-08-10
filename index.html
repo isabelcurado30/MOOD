@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Mood - Agency & Creative</title>
+        <link rel="icon" type="image/png" href="img/exp.png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -158,11 +159,38 @@
 
         </div><!-- fin .djs-wrapper -->
 
+        <!-- ===== BRANDING DJS ===== -->
+        <section class="branding-djs reveal">
+            <div class="branding-djs-blob branding-djs-blob--tl"></div>
+            <div class="branding-djs-blob branding-djs-blob--br"></div>
+
+            <div class="branding-djs-title">
+                <svg class="branding-star branding-star--tl" viewBox="0 0 40 40"><path d="M20 2 L22.5 17.5 L38 20 L22.5 22.5 L20 38 L17.5 22.5 L2 20 L17.5 17.5 Z" fill="var(--purple)"/></svg>
+                <h2 class="branding-h2"><span class="branding-h2--black">BRANDING</span><br><em class="branding-h2--amber">para</em> <span class="branding-h2--black">DJ'S</span></h2>
+                <svg class="branding-star branding-star--br" viewBox="0 0 40 40"><path d="M20 2 L22.5 17.5 L38 20 L22.5 22.5 L20 38 L17.5 22.5 L2 20 L17.5 17.5 Z" fill="var(--purple)"/></svg>
+            </div>
+
+            <div class="branding-grid">
+                <span class="branding-tag">Nombre artístico</span>
+                <span class="branding-tag">Logotipo</span>
+                <span class="branding-tag">Visuales</span>
+                <span class="branding-tag">Aftermovies</span>
+                <span class="branding-tag">Presskit completo</span>
+                <span class="branding-tag">Sesión de fotos</span>
+                <span class="branding-tag">Flyers (stories)</span>
+                <span class="branding-tag">Contenido para redes</span>
+                <span class="branding-tag">Videos de sesiones</span>
+            </div>
+
+            <p class="branding-desc">Si eres DJ o dueño de una discoteca, y necesitas alguno de estos servicios;</p>
+            <a href="https://wa.me/34644690926" class="branding-cta" target="_blank" rel="noopener">Contáctanos</a>
+        </section>
+
         <!-- ===== MOOD CREATIVE ===== -->
         <section class="creative-section" id="creative">
 
             <div class="creative-header reveal">
-                <h2 class="creative-heading">Servicios de <img src="img/moodcreative1.png" alt="Mood Creative" class="creative-heading-logo"></h2>
+                <h2 class="creative-heading">Servicios de <img src="img/MoodCreative.png" alt="Mood Creative" class="creative-heading-logo"></h2>
             </div>
 
             <div class="creative-marquee-wrap" aria-hidden="true">
@@ -537,14 +565,39 @@
             </div>
         </footer>
 
-        <!-- ===== WHATSAPP BTN ===== -->
-        <a href="https://wa.me/34644690926" class="wa-btn" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-            <span class="wa-dot"></span>
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.428a.75.75 0 0 0 .915.915l5.571-1.476A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.714 9.714 0 0 1-4.946-1.349l-.355-.21-3.679.974.982-3.595-.229-.368A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
-            </svg>
-        </a>
+        <!-- ===== WHATSAPP WIDGET ===== -->
+        <div class="wa-widget" id="waWidget">
+            <div class="wa-popup" id="waPopup" aria-hidden="true">
+                <div class="wa-popup-header">
+                    <div class="wa-popup-avatar">
+                        <img src="img/exp.png" alt="Álvaro Morales" onerror="this.style.display='none'">
+                    </div>
+                    <div class="wa-popup-info">
+                        <strong>Álvaro Morales</strong>
+                    </div>
+                    <button class="wa-popup-close" id="waPopupClose" aria-label="Cerrar">✕</button>
+                </div>
+                <div class="wa-popup-body">
+                    <div class="wa-popup-bubble">
+                        <strong>Álvaro Morales</strong>
+                        <p>Buenas, ¿necesitas información sobre alguno de nuestros servicios?</p>
+                    </div>
+                </div>
+                <div class="wa-popup-footer">
+                    <a href="https://wa.me/34644690926?text=Hola%2C%20me%20gustar%C3%ADa%20m%C3%A1s%20informaci%C3%B3n%20sobre%20vuestros%20servicios" class="wa-popup-cta" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.428a.75.75 0 0 0 .915.915l5.571-1.476A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.714 9.714 0 0 1-4.946-1.349l-.355-.21-3.679.974.982-3.595-.229-.368A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/></svg>
+                        Escríbenos por WhatsApp
+                    </a>
+                </div>
+            </div>
+            <button class="wa-btn" id="waBtn" aria-label="Contactar por WhatsApp">
+                <span class="wa-dot"></span>
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.533 5.857L.057 23.428a.75.75 0 0 0 .915.915l5.571-1.476A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.714 9.714 0 0 1-4.946-1.349l-.355-.21-3.679.974.982-3.595-.229-.368A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+                </svg>
+            </button>
+        </div>
 
         <!-- ===== NAV OVERLAY ===== -->
         <div class="nav-overlay" id="navOverlay">
@@ -787,6 +840,16 @@
         modalClose.addEventListener('click', closeModal);
         backdrop.addEventListener('click', closeModal);
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+        // WhatsApp popup
+        const waBtn = document.getElementById('waBtn');
+        const waPopup = document.getElementById('waPopup');
+        const waPopupClose = document.getElementById('waPopupClose');
+        waBtn.addEventListener('click', () => waPopup.classList.toggle('is-open'));
+        waPopupClose.addEventListener('click', (e) => { e.stopPropagation(); waPopup.classList.remove('is-open'); });
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.wa-widget')) waPopup.classList.remove('is-open');
+        });
 
         // Scroll reveal
         const revealEls = document.querySelectorAll('.reveal');
