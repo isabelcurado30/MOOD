@@ -383,7 +383,7 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 /* Creative — logo centrado */
 .grupo-card--creative{ background:#fff; color:var(--charcoal); border:2px solid rgba(46,45,45,0.1); display:flex; flex-direction:column; align-items:center; justify-content:center; }
 .grupo-card--creative .grupo-card-btn{ color:var(--purple); }
-.grupo-card--creative .grupo-card-bg-img{ display:block; width:clamp(160px,80%,260px); margin:0 auto clamp(12px,2vh,20px); object-fit:contain; }
+.grupo-card--creative .grupo-card-bg-img{ display:block; width:clamp(200px,95%,340px); margin:0 auto clamp(12px,2vh,20px); object-fit:contain; }
 .grupo-card--events .grupo-card-bg-img{ display:block; width:clamp(120px,62%,200px); margin:0 auto clamp(12px,2vh,20px); object-fit:contain; }
 
 /* Eventos — ámbar con logo */
@@ -1168,11 +1168,10 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 }
 
 .csg-carousels-wrap{
-  display:flex;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:1fr 1fr;
   gap:clamp(12px,2vw,24px);
   align-items:flex-start;
-  justify-content:center;
 }
 
 .csg-carousel{
@@ -1185,7 +1184,7 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 
 .csg-carousel-track{
   position:relative;
-  width:clamp(180px,28vw,320px);
+  width:100%;
   aspect-ratio:3/4;
   border-radius:16px;
   overflow:hidden;
@@ -1704,17 +1703,24 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 }
 
 .exp-title{
+  font-family:'Source Sans 3', var(--font-main);
   font-size:clamp(2rem,5vw,4rem);
   font-weight:900;
   color:#fff;
   text-align:center;
   margin:0 0 clamp(20px,3vh,36px);
-  font-style:normal;
+  font-style:italic;
   position:relative;
   z-index:1;
 }
 .exp-title em{ font-style:italic; color:#fff; }
-.exp-title--teal{ color:#5bcfcf; font-style:italic; }
+.exp-title--teal{
+  color:#5bcfcf;
+  text-shadow:
+    1px 1px 0 rgba(255,255,255,0.6),
+    2px 2px 0 rgba(255,255,255,0.4),
+    3px 3px 0 rgba(255,255,255,0.2);
+}
 
 /* cohetes */
 .exp-rocket{
@@ -1766,47 +1772,39 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 }
 
 .exp-claim{
-  font-size:clamp(1rem,2vw,1.5rem);
   color:#fff;
-  line-height:1.5;
   margin:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.3rem;
 }
-.exp-claim strong:first-child{
-  font-size:clamp(1.2rem,2.5vw,1.9rem);
+.exp-claim-title{
+  font-family:var(--font-main);
+  font-size:clamp(1.2rem,2.5vw,2rem);
+  font-weight:900;
+  letter-spacing:.04em;
+  text-transform:uppercase;
   display:block;
-  margin-bottom:.3rem;
+}
+.exp-claim-sub{
+  font-family:var(--font-main);
+  font-size:clamp(.95rem,1.8vw,1.3rem);
+  font-weight:400;
+  display:block;
+  line-height:1.4;
 }
 
 .exp-logo-text{
   display:flex;
-  flex-direction:column;
   align-items:center;
-  line-height:1;
-  gap:.1rem;
+  justify-content:center;
 }
-.exp-logo-exp{
-  font-size:clamp(1.4rem,2.5vw,2rem);
-  font-weight:700;
-  font-style:italic;
-  color:#5bcfcf;
-  letter-spacing:.04em;
-}
-.exp-logo-mood{
-  font-size:clamp(2.4rem,5vw,4rem);
-  font-weight:900;
-  font-style:italic;
-  color:#fff;
-  position:relative;
-}
-.exp-logo-dot{
-  display:inline-block;
-  width:.18em;
-  height:.18em;
-  background:#5bcfcf;
-  border-radius:50%;
-  margin-left:.05em;
-  vertical-align:middle;
-  transform:translateY(.1em);
+.exp-logo-img{
+  width:clamp(120px, 16vw, 200px);
+  height:auto;
+  display:block;
+  margin-top:2.2rem;
 }
 
 /* --- parte teal --- */
@@ -1827,11 +1825,12 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   margin:0;
 }
 
-.exp-glasses svg{
+.exp-glasses img{
   width:100%;
   max-width:320px;
   display:block;
   margin:0 auto;
+  object-fit:contain;
 }
 
 @media(max-width:640px){
@@ -2435,6 +2434,92 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   .cta-block{ grid-template-columns:1fr; }
   .cta--events{ flex-direction:row; }
   .hero{ align-items:flex-end; padding-bottom:40px; }
+
+  /* Experiencia: cohetes más pequeños */
+  .exp-rocket--left{ width:55px; }
+  .exp-rocket--right{ width:48px; }
+
+  /* Creative heading: logo en línea propia */
+  .creative-heading{ flex-direction:column; align-items:flex-start; gap:6px; }
+  .creative-heading-logo{ height:2.4rem; margin-left:0; margin-top:0; }
+
+  /* DJ modal foto más pequeña */
+  .dj-modal-photo{ min-height:260px; }
+}
+
+/* ---- Móviles medianos (≤ 480px) ---- */
+@media (max-width:480px){
+  /* Nav */
+  .brand img{ height:52px; }
+
+  /* Hero */
+  .hero-eyebrow{ font-size:.72rem; }
+
+  /* Grupo cards */
+  .grupo-card{ min-height:160px; }
+
+  /* CTA events: columna en pantallas pequeñas */
+  .cta--events{ flex-direction:column; align-items:flex-start; gap:1rem; }
+  .cta-events-main{ flex-direction:column; align-items:flex-start; gap:.5rem; }
+
+  /* DJ circles: más pequeños */
+  .dj-spot-circle{
+    width:clamp(130px, 38vw, 170px);
+    height:clamp(130px, 38vw, 170px);
+  }
+  .dj-spot-glow{
+    width:clamp(140px, 40vw, 180px);
+    height:clamp(140px, 40vw, 180px);
+  }
+  .dj-spot-name-bg{ font-size:1.8rem; }
+  .dj-name{ font-size:1.8rem; }
+
+  /* Branding DJs */
+  .branding-h2{ font-size:2rem; }
+  .branding-grid{ grid-template-columns:1fr 1fr; }
+
+  /* Creative heading: logo baja a nueva línea */
+  .creative-heading{
+    font-size:1.1rem;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:6px;
+  }
+  .creative-heading-logo{
+    height:2rem;
+    margin-left:0;
+    margin-top:0;
+  }
+
+  /* Diseño gráfico carruseles: apila en pantallas muy pequeñas */
+  .csg-carousels-wrap{ grid-template-columns:1fr; }
+
+  /* Precios: padding */
+  .cpr-card{ padding:clamp(18px,4vw,28px); }
+
+  /* Experience */
+  .exp-title{ font-size:1.8rem; }
+  .exp-logo-img{ width:130px; }
+  .exp-rocket--left, .exp-rocket--right{ width:42px; }
+
+  /* Footer */
+  .footer-logo img{ height:52px; }
+
+  /* WhatsApp popup */
+  .wa-widget{ bottom:16px; right:16px; }
+}
+
+/* ---- Móviles pequeños (≤ 380px) ---- */
+@media (max-width:380px){
+  .dj-spot-circle{
+    width:120px;
+    height:120px;
+  }
+  .djs-roster{ gap:12px; padding-left:12px; padding-right:12px; }
+  .branding-grid{ grid-template-columns:1fr; }
+  .csg-carousels-wrap{ grid-template-columns:1fr; }
+  .exp-title{ font-size:1.5rem; }
+  .cpr-card-title{ font-size:1.1rem; }
 }
 
 @media (prefers-reduced-motion: reduce){
