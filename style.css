@@ -570,6 +570,13 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 .cta--events:focus-visible .cta-arrow{ opacity:1; transform:translateX(6px); color:var(--purple); }
 
 /* ============ WHATSAPP WIDGET ============ */
+/* El popup cerrado sigue ocupando su caja en el layout (se oculta con opacity,
+   no con display:none, para conservar la transición), así que el contenedor
+   mide ~340x478px esté abierto o cerrado. Sin esto, ese rectángulo invisible
+   intercepta todos los taps de la esquina inferior derecha: en escritorio son
+   340px sobre ~1600 (cae fuera del contenido centrado y no se nota), pero en
+   un móvil de 390px es el 87% del ancho y bloquea media pantalla.
+   El contenedor deja pasar los eventos; solo el botón y el popup abierto los reciben. */
 .wa-widget{
   position:fixed;
   bottom:28px;
@@ -579,6 +586,7 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   flex-direction:column;
   align-items:flex-end;
   gap:12px;
+  pointer-events:none;
 }
 
 .wa-btn{
@@ -596,6 +604,7 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   cursor:pointer;
   position:relative;
   flex-shrink:0;
+  pointer-events:auto;
 }
 .wa-btn:hover{
   transform:scale(1.1);
@@ -2366,6 +2375,17 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   pointer-events:auto;
 }
 .dj-spot-btn:hover{ background:var(--amber); }
+
+/* En cualquier dispositivo sin hover el botón se muestra siempre. La regla de
+   ≤640px de abajo solo cubría móviles: una tablet táctil de 700-1024px entraba
+   en el rango "escritorio" y el botón quedaba invisible y sin pointer-events. */
+@media (hover:none){
+  .dj-spot-btn{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+}
 
 @media (max-width:640px){
   .djs-roster{ gap:24px; }
