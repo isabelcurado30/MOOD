@@ -307,6 +307,58 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   color:var(--paper);
 }
 
+/* ---- Indicador de scroll ---- */
+.hero-scroll{
+  position:absolute;
+  bottom:clamp(16px, 2.5vh, 26px);
+  left:50%;
+  translate:-50% 0;
+  z-index:2;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.55rem;
+  pointer-events:none;
+  transition:opacity .45s ease;
+}
+
+/* El header ya lleva .is-scrolled al bajar 40px; se reaprovecha como señal
+   para esconder el indicador sin añadir otro listener de scroll. */
+.site-header.is-scrolled ~ .hero .hero-scroll{ opacity:0; }
+
+.hero-scroll-label{
+  font-size:.6rem;
+  letter-spacing:.24em;
+  text-transform:uppercase;
+  color:rgba(241,241,241,0.45);
+}
+
+.hero-scroll-line{
+  position:relative;
+  width:1px;
+  height:44px;
+  overflow:hidden;
+  background:rgba(241,241,241,0.2);
+}
+/* Un segmento ámbar recorre la línea hacia abajo, con una pausa al final */
+.hero-scroll-line::after{
+  content:'';
+  position:absolute;
+  inset:0 0 auto 0;
+  height:42%;
+  background:var(--amber);
+  animation:hero-scroll-travel 2.4s cubic-bezier(.7,0,.3,1) infinite;
+}
+@keyframes hero-scroll-travel{
+  0%      { transform:translateY(-100%); }
+  55%,100%{ transform:translateY(240%); }
+}
+
+@media (max-width:480px){
+  .hero-scroll-label{ display:none; }
+  .hero-scroll-line{ height:32px; }
+}
+
 /* ============ GRUPO MOOD ============ */
 .grupo-section{
   background:url('img/fondo_inicio.png') center/cover no-repeat;
@@ -350,6 +402,11 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   transform:translateY(-6px);
   box-shadow:0 20px 48px rgba(0,0,0,0.18);
 }
+
+/* El logo acompaña el hover con un zoom mínimo. Va por `scale` (propiedad
+   independiente) para no tocar el `transform` de la tarjeta. */
+.grupo-card-bg-img{ transition:scale .45s cubic-bezier(.25,.46,.45,.94); }
+.grupo-card:hover .grupo-card-bg-img{ scale:1.045; }
 
 .grupo-card-top{
   display:flex;
@@ -612,6 +669,8 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 }
 .wa-btn svg{ width:28px; height:28px; }
 
+/* El puntito de "en línea" late suavemente: señala que hay alguien
+   al otro lado sin robarle atención al resto de la página. */
 .wa-dot{
   position:absolute;
   top:4px;
@@ -621,6 +680,11 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   border-radius:50%;
   background:#4ade80;
   border:2px solid #fff;
+  animation:wa-dot-ping 2.6s ease-out infinite;
+}
+@keyframes wa-dot-ping{
+  0%      { box-shadow:0 0 0 0 rgba(74,222,128,0.55); }
+  60%,100%{ box-shadow:0 0 0 8px rgba(74,222,128,0); }
 }
 
 /* popup */
@@ -958,15 +1022,28 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   padding:.7rem 0;
   border-bottom:1px solid rgba(46,45,45,0.09);
   font-size:.95rem;
+  opacity:0;
+  translate:0 10px;
+  transition:opacity .5s ease, translate .5s cubic-bezier(.25,.46,.45,.94);
 }
+/* Entran en cascada cuando el bloque ya es visible, a la vez que los
+   contadores del JS empiezan a subir. */
+.creative-service.is-visible .creative-stats li{ opacity:1; translate:0 0; }
+.creative-service.is-visible .creative-stats li:nth-child(1){ transition-delay:.10s; }
+.creative-service.is-visible .creative-stats li:nth-child(2){ transition-delay:.18s; }
+.creative-service.is-visible .creative-stats li:nth-child(3){ transition-delay:.26s; }
+.creative-service.is-visible .creative-stats li:nth-child(4){ transition-delay:.34s; }
 
 .creative-stat-label{
   color:var(--charcoal);
 }
 
+/* tabular-nums fija el ancho de cada dígito: sin esto el número "baila"
+   de izquierda a derecha mientras el contador sube. */
 .creative-stat-value{
   font-weight:600;
   color:var(--charcoal);
+  font-variant-numeric:tabular-nums;
 }
 
 .creative-stat-value--up{
@@ -1311,7 +1388,10 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   background:rgba(255,255,255,0.07);
   border:1px solid rgba(255,255,255,0.15);
   backdrop-filter:blur(6px);
-  transition:transform .25s ease, box-shadow .25s ease;
+  opacity:0;
+  translate:0 22px;
+  transition:transform .25s ease, box-shadow .25s ease,
+             opacity .6s ease, translate .6s cubic-bezier(.25,.46,.45,.94);
 }
 .cpr-card:hover{
   transform:translateY(-4px);
@@ -1323,6 +1403,14 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   transform:scale(1.04);
 }
 .cpr-card--pro:hover{ transform:scale(1.04) translateY(-4px); }
+
+/* Las tres tarjetas entran escalonadas. `opacity` + `translate` son
+   independientes del `transform`, así que ni el hover ni el scale(1.04)
+   del plan PRO se ven afectados. */
+.cpr-section.is-visible .cpr-card{ opacity:1; translate:0 0; }
+.cpr-section.is-visible .cpr-card:nth-child(1){ transition-delay:0s, 0s, .08s, .08s; }
+.cpr-section.is-visible .cpr-card:nth-child(2){ transition-delay:0s, 0s, .20s, .20s; }
+.cpr-section.is-visible .cpr-card:nth-child(3){ transition-delay:0s, 0s, .32s, .32s; }
 
 .cpr-badge{
   position:absolute;
@@ -1491,12 +1579,23 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   background:rgba(255,255,255,0.07);
   border:1px solid rgba(255,255,255,0.15);
   color:#fff;
-  transition:transform .2s ease, box-shadow .2s ease;
+  opacity:0;
+  translate:-20px 0;
+  transition:transform .2s ease, box-shadow .2s ease,
+             opacity .55s ease, translate .55s cubic-bezier(.25,.46,.45,.94);
 }
 .cmt-row:hover{
   transform:translateX(4px);
   box-shadow:0 8px 28px rgba(0,0,0,0.3);
 }
+
+/* Las filas entran deslizando desde la izquierda, una detrás de otra.
+   El retardo se aplica solo a opacity/translate para que el hover
+   (transform/box-shadow) siga respondiendo al instante. */
+.cmt-section.is-visible .cmt-row{ opacity:1; translate:0 0; }
+.cmt-section.is-visible .cmt-row:nth-child(1){ transition-delay:0s, 0s, .06s, .06s; }
+.cmt-section.is-visible .cmt-row:nth-child(2){ transition-delay:0s, 0s, .16s, .16s; }
+.cmt-section.is-visible .cmt-row:nth-child(3){ transition-delay:0s, 0s, .26s, .26s; }
 
 .cmt-row--essential{
   background:rgba(255,255,255,0.07);
@@ -1701,6 +1800,8 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   flex-wrap:nowrap;
 }
 
+/* Las fotos se levantan al pasar por encima. El desplazamiento va por
+   `translate` para conservar el `rotate()` propio de cada una. */
 .cfv-img{
   border-radius:10px;
   box-shadow:0 10px 28px rgba(0,0,0,0.18);
@@ -1709,6 +1810,11 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   height:clamp(140px,18vw,220px);
   width:auto;
   object-fit:cover;
+  transition:translate .35s cubic-bezier(.25,.46,.45,.94), box-shadow .35s ease;
+}
+.cfv-img:hover{
+  translate:0 -8px;
+  box-shadow:0 20px 44px rgba(0,0,0,0.28);
 }
 .cfv-img--1{ transform:rotate(-3deg); align-self:flex-end; margin-bottom:20px; }
 .cfv-img--2{ transform:rotate(2deg);  align-self:center; }
@@ -1994,6 +2100,31 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   background:var(--amber);
   color:var(--charcoal);
 }
+
+/* ---- Micro-lift compartido de los CTA ----
+   Hasta ahora los botones solo cambiaban de color al pasar por encima.
+   Un desplazamiento de 2px basta para que respondan al cursor.
+   Va en longhand y después de cada definición para ampliar la lista de
+   propiedades animadas sin reescribir los `transition` originales. */
+.branding-cta,
+.csw-cta-btn,
+.chatia-btn,
+.exp-cta-btn,
+.wa-popup-cta,
+.grupo-card-btn{
+  transition-property:background-color, color, border-color, opacity, translate, box-shadow;
+  transition-duration:.25s;
+  transition-timing-function:ease;
+}
+.branding-cta:hover,
+.csw-cta-btn:hover,
+.chatia-btn:hover,
+.exp-cta-btn:hover,
+.wa-popup-cta:hover{
+  translate:0 -2px;
+}
+.branding-cta:hover{ box-shadow:0 10px 26px rgba(92,19,156,0.35); }
+.exp-cta-btn:hover{ box-shadow:0 10px 26px rgba(246,178,73,0.3); }
 
 .exp-circle{
   position:absolute;
@@ -2652,4 +2783,18 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 
 @media (prefers-reduced-motion: reduce){
   .mood-field, .mood-field span{ animation:none !important; }
+
+  /* Animaciones en bucle: se detienen, el elemento queda en su estado final */
+  .hero-scroll-line::after,
+  .wa-dot{ animation:none !important; }
+
+  /* Entradas escalonadas: el contenido se muestra directamente.
+     Sin esto quedaría en opacity:0 de forma permanente. */
+  .cpr-card,
+  .cmt-row,
+  .creative-stats li{
+    opacity:1 !important;
+    translate:none !important;
+    transition:none !important;
+  }
 }

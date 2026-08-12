@@ -41,6 +41,13 @@
                 <span class="hero-eyebrow reveal">Mood — Agency &amp; Creative</span>
                 <h1 class="hero-phrase reveal reveal--delay">Donde la creatividad y el talento encuentran su identidad.</h1>
             </div>
+
+            <!-- Indicador de scroll: el hero ocupa 100svh y no hay ninguna pista
+                 de que haya contenido debajo. Se desvanece al empezar a bajar. -->
+            <div class="hero-scroll" aria-hidden="true">
+                <span class="hero-scroll-label">Scroll</span>
+                <span class="hero-scroll-line"></span>
+            </div>
         </section>
 
         <section class="grupo-section reveal">
@@ -839,6 +846,89 @@
                 if(!el.classList.contains('is-visible')) makeVisible(el);
             });
         }, 800);
+
+        // ---- Contadores de las estadísticas de redes sociales ----
+        // Las cifras se leen del propio HTML, no se duplican aquí: para cambiar
+        // un dato basta con editarlo en su <span>, como hasta ahora.
+        (function(){
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+            // Reconstruye el número con el MISMO formato con el que está escrito
+            // en el HTML: mismos decimales y separador de millar solo si lo lleva.
+            // No se usa Intl.NumberFormat('es-ES') a propósito: para 4 cifras
+            // devuelve "9470" en vez de "9.470" (la ortografía española no agrupa
+            // los números de cuatro dígitos) y alteraría el dato del cliente.
+            function formatEs(value, decimals, grouped){
+                var partes = value.toFixed(decimals).split('.');
+                var entera = grouped
+                    ? partes[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+                    : partes[0];
+                return entera + (partes[1] ? ',' + partes[1] : '');
+            }
+
+            var stats = [];
+            document.querySelectorAll('.creative-stat-value').forEach(function(el){
+                // "↗ 819,8 mil"  ->  prefijo "↗ " | número "819,8" | sufijo " mil"
+                var m = el.textContent.match(/^(\D*)([\d.,]+)(.*)$/);
+                if (!m) return;
+                var target = parseFloat(m[2].replace(/\./g, '').replace(',', '.'));
+                if (isNaN(target)) return;
+                stats.push({
+                    el: el, prefix: m[1], suffix: m[3], target: target, started: false,
+                    decimals: (m[2].split(',')[1] || '').length,
+                    grouped:  m[2].indexOf('.') > -1
+                });
+            });
+            if (!stats.length) return;
+
+            function render(s, value){
+                s.el.textContent = s.prefix + formatEs(value, s.decimals, s.grouped) + s.suffix;
+            }
+            stats.forEach(function(s){ render(s, 0); });
+
+            function run(s){
+                if (s.started) return;
+                s.started = true;
+                var DUR = 1400, t0 = null;
+                requestAnimationFrame(function step(ts){
+                    if (t0 === null) t0 = ts;
+                    var p = Math.min((ts - t0) / DUR, 1);
+                    if (p < 1) {
+                        render(s, s.target * (1 - Math.pow(1 - p, 3))); // easeOutCubic
+                        requestAnimationFrame(step);
+                    } else {
+                        render(s, s.target); // valor exacto, sin arrastre del easing
+                    }
+                });
+            }
+
+            if ('IntersectionObserver' in window) {
+                var obs = new IntersectionObserver(function(entries){
+                    entries.forEach(function(entry){
+                        if (!entry.isIntersecting) return;
+                        obs.unobserve(entry.target);
+                        stats.forEach(function(s){ if (s.el === entry.target) run(s); });
+                    });
+                }, { threshold: 0.6 });
+                stats.forEach(function(s){ obs.observe(s.el); });
+            }
+
+            // Misma red de seguridad que los reveals: si el observer no dispara,
+            // se comprueba la posición al hacer scroll. Sin esto las cifras
+            // podrían quedarse congeladas en 0.
+            function fallback(){
+                var pending = false;
+                stats.forEach(function(s){
+                    if (s.started) return;
+                    pending = true;
+                    var r = s.el.getBoundingClientRect();
+                    if (r.top < window.innerHeight * 0.9 && r.bottom > 0) run(s);
+                });
+                if (!pending) window.removeEventListener('scroll', fallback);
+            }
+            window.addEventListener('scroll', fallback, { passive:true });
+            setTimeout(fallback, 1200);
+        })();
         </script>
     </body>
 </html>
