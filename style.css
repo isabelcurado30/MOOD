@@ -1483,29 +1483,19 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   align-items:center;
   justify-content:center;
   gap:clamp(12px,2.5vw,32px);
-  background:linear-gradient(100deg, #1a0035 0%, #3b0a6e 40%, #1a0035 100%);
-  background-size:200% 100%;
-  animation:chatia-shimmer 6s ease infinite;
+  background:var(--amber);
   padding:clamp(18px,3vh,28px) var(--edge);
   flex-wrap:wrap;
   overflow:hidden;
-  border-top:1px solid rgba(246,178,73,0.25);
-  border-bottom:1px solid rgba(246,178,73,0.25);
+  border-top:none;
+  border-bottom:none;
 }
-@keyframes chatia-shimmer{
-  0%  { background-position:100% 0; }
-  50% { background-position:0% 0; }
-  100%{ background-position:100% 0; }
-}
-.chatia-glow{
-  position:absolute;
-  inset:0;
-  background:radial-gradient(ellipse at 50% 50%, rgba(246,178,73,0.12) 0%, transparent 70%);
-  pointer-events:none;
-}
+.chatia-glow{ display:none; }
 .chatia-tag{
-  background:var(--amber);
-  color:var(--charcoal);
+  background:linear-gradient(100deg, #3b0a6e 0%, var(--purple) 35%, #9b3de8 50%, var(--purple) 65%, #3b0a6e 100%);
+  background-size:300% 100%;
+  animation:chatia-shimmer 3s ease infinite;
+  color:#fff;
   font-size:.72rem;
   font-weight:900;
   letter-spacing:.1em;
@@ -1513,41 +1503,45 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   padding:5px 14px;
   border-radius:99px;
   flex-shrink:0;
-  box-shadow:0 0 18px rgba(246,178,73,0.5);
+  box-shadow:0 0 14px rgba(92,19,156,0.5);
+}
+@keyframes chatia-shimmer{
+  0%  { background-position:100% 0; }
+  50% { background-position:0% 0; }
+  100%{ background-position:100% 0; }
 }
 .chatia-text{
-  color:rgba(255,255,255,0.92);
+  color:var(--charcoal);
   font-weight:500;
   font-size:clamp(.95rem,1.5vw,1.1rem);
   margin:0;
   text-align:center;
   letter-spacing:.01em;
 }
-.chatia-text strong{ color:#fff; font-weight:800; }
+.chatia-text strong{ color:var(--charcoal); font-weight:800; }
 .chatia-price{
-  color:var(--amber);
+  color:var(--charcoal);
   font-weight:900;
   font-size:clamp(1.3rem,2.5vw,1.8rem);
   flex-shrink:0;
   letter-spacing:-.01em;
 }
 .chatia-btn{
-  background:transparent;
-  color:rgba(255,255,255,0.85);
-  border:1px solid rgba(255,255,255,0.3);
+  background:var(--purple);
+  color:#fff;
+  border:none;
   font-size:.85rem;
   font-weight:600;
   padding:.45rem 1.2rem;
   border-radius:99px;
   text-decoration:none;
   flex-shrink:0;
-  transition:border-color .2s, color .2s, background .2s;
+  transition:background .2s, transform .2s;
   white-space:nowrap;
 }
 .chatia-btn:hover{
-  border-color:var(--amber);
-  color:var(--amber);
-  background:rgba(246,178,73,0.08);
+  background:#4a0f7e;
+  transform:translateY(-1px);
 }
 
 .cmt-section{
