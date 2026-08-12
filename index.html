@@ -768,13 +768,17 @@
             igEl.style.display = 'inline-flex';
 
             modal.setAttribute('aria-hidden', 'false');
-            modal.classList.add('is-open');
+            // display:flex first, then add is-open on next frame so opacity transition works
+            modal.style.display = 'flex';
+            requestAnimationFrame(() => modal.classList.add('is-open'));
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             modal.setAttribute('aria-hidden', 'true');
             modal.classList.remove('is-open');
+            // wait for opacity transition (300ms) before hiding completely
+            setTimeout(() => { modal.style.display = 'none'; }, 320);
             document.body.style.overflow = '';
         }
 
