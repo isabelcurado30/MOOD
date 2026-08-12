@@ -26,8 +26,8 @@ body{
   overflow-x:hidden;
 }
 
-a{ color:inherit; text-decoration:none; }
-button{ font:inherit; color:inherit; background:none; border:none; cursor:pointer; }
+a{ color:inherit; text-decoration:none; touch-action:manipulation; }
+button{ font:inherit; color:inherit; background:none; border:none; cursor:pointer; touch-action:manipulation; }
 
 :focus-visible{
   outline:2px solid var(--purple);
@@ -2367,6 +2367,13 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
 @media (max-width:640px){
   .djs-roster{ gap:24px; }
   .dj-spot-name-bg{ font-size:2.2rem; }
+
+  /* Botón siempre visible en móvil */
+  .dj-spot-btn{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
 }
 
 .dj-genre{
@@ -2505,6 +2512,7 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   opacity:0;
   transform:translateY(48px);
   filter:blur(4px);
+  pointer-events:none;
   transition:opacity .7s cubic-bezier(.25,.46,.45,.94),
              transform .7s cubic-bezier(.25,.46,.45,.94),
              filter .7s ease;
@@ -2513,6 +2521,7 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   opacity:1;
   transform:translateY(0);
   filter:blur(0);
+  pointer-events:auto;
 }
 .reveal--delay  { transition-delay:.15s; }
 .reveal--delay-2{ transition-delay:.28s; }
