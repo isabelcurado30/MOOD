@@ -233,7 +233,11 @@ button{ font:inherit; color:inherit; background:none; border:none; cursor:pointe
   min-height:100%;
   border:none;
   pointer-events:none;
+  /* Oculto hasta que YouTube quita sus botones iniciales (ver script en index.html) */
+  opacity:0;
+  transition:opacity 1.2s ease;
 }
+.hero-yt-wrap.is-ready .hero-yt-iframe{ opacity:1; }
 
 /* Si no hay vídeo (archivo ausente) el mood-field actúa de fallback visual */
 /* Mood-field: layered blurred gradients that drift and slowly shift hue —
