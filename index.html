@@ -27,11 +27,18 @@
 
         <section class="hero">
             <div class="hero-video hero-yt-wrap">
-                <iframe class="hero-yt-iframe" id="hero-yt"
+                <!-- Dos reproductores que se turnan para que nunca se vean los botones de YouTube (ver script al final) -->
+                <iframe class="hero-yt-iframe" id="hero-yt-a"
                     src="https://www.youtube.com/embed/89th5YDun7E?autoplay=1&mute=1&loop=1&playlist=89th5YDun7E&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&disablekb=1&fs=0&enablejsapi=1"
                     frameborder="0"
                     allow="autoplay; encrypted-media"
-                    allowfullscreen>
+                    tabindex="-1" aria-hidden="true">
+                </iframe>
+                <iframe class="hero-yt-iframe" id="hero-yt-b"
+                    src="https://www.youtube.com/embed/89th5YDun7E?autoplay=0&mute=1&loop=1&playlist=89th5YDun7E&controls=0&showinfo=0&rel=0&iv_load_policy=3&modestbranding=1&playsinline=1&disablekb=1&fs=0&enablejsapi=1"
+                    frameborder="0"
+                    allow="autoplay; encrypted-media"
+                    tabindex="-1" aria-hidden="true">
                 </iframe>
             </div>
             <div class="mood-field" aria-hidden="true">
@@ -932,25 +939,59 @@
         })();
         </script>
         <script>
-            /* Vídeo del hero: se mantiene oculto hasta que YouTube retira
-               sus botones de reproducción iniciales, y entonces aparece con fundido. */
+            /* Vídeo del hero sin los botones de YouTube.
+               YouTube muestra pausa/anterior/siguiente unos 4 s cada vez que el vídeo
+               empieza (también al repetirse en bucle). Por eso hay dos reproductores:
+               el visible y uno oculto. Antes de que termine el visible, el oculto
+               arranca desde el principio (sus botones salen sin que se vean) y,
+               al llegar al final, se hace un fundido de uno a otro. */
             (function () {
-                var wrap = document.querySelector('.hero-yt-wrap');
-                if (!wrap) return;
-                var shown = false;
-                function show() { if (!shown) { shown = true; wrap.classList.add('is-ready'); } }
-                // Respaldo: si la API de YouTube no responde, mostrar igualmente.
-                var fallback = setTimeout(show, 7000);
+                var frames = [document.getElementById('hero-yt-a'), document.getElementById('hero-yt-b')];
+                if (!frames[0] || !frames[1]) return;
+                var SHOW_DELAY = 4500;          // ms que tardan en irse los botones
+                var END_MARGIN = 2.5;         // s antes del final en que se hace el cambio
+                var LEAD = SHOW_DELAY / 1000 + END_MARGIN + 1; // s antes del final en que arranca el oculto
+                var players = [], active = 0, started = false, preparing = false;
+                // El nuevo aparece por encima; el anterior se oculta cuando el fundido ha terminado.
+                function show(i) {
+                    frames[i].style.zIndex = 2; frames[1 - i].style.zIndex = 1;
+                    frames[i].classList.add('is-on');
+                    setTimeout(function () { frames[1 - i].classList.remove('is-on'); }, 1300);
+                }
+                // Respaldo: si la API de YouTube no responde, mostrar el vídeo igualmente.
+                var fallback = setTimeout(function () { show(0); }, 9000);
+                function loop() {
+                    setInterval(function () {
+                        var cur = players[active], nxt = players[1 - active];
+                        if (!cur || !cur.getDuration || !nxt || !nxt.seekTo) return;
+                        var d = cur.getDuration(), t = cur.getCurrentTime();
+                        if (!d) return;
+                        if (!preparing && t > d - LEAD) {
+                            preparing = true;
+                            nxt.seekTo(0, true); nxt.playVideo();
+                        }
+                        if (preparing && t > d - END_MARGIN) {
+                            preparing = false;
+                            show(1 - active);
+                            active = 1 - active;
+                            setTimeout(function () { cur.pauseVideo(); }, 1500);
+                        }
+                    }, 200);
+                }
                 window.onYouTubeIframeAPIReady = function () {
-                    new YT.Player('hero-yt', {
+                    players[0] = new YT.Player('hero-yt-a', {
                         events: {
                             onStateChange: function (e) {
-                                if (e.data === YT.PlayerState.PLAYING && !shown) {
+                                if (e.data === YT.PlayerState.PLAYING && !started) {
+                                    started = true;
                                     clearTimeout(fallback);
-                                    setTimeout(show, 3000);
+                                    setTimeout(function () { show(0); loop(); }, SHOW_DELAY);
                                 }
                             }
                         }
+                    });
+                    players[1] = new YT.Player('hero-yt-b', {
+                        events: { onReady: function (e) { e.target.mute(); } }
                     });
                 };
                 var s = document.createElement('script');
